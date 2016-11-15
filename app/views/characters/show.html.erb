@@ -9,10 +9,22 @@
       <dd><%= @character.name %></dd>
 
       <dt>Movie</dt>
-      <dd><%= @character.movie_id %></dd>
+      <dd>
+        <% if @character.movie.present? %>
+          <a href="/movies/<%= @character.movie_id %>">
+            <%= @character.movie.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Actor</dt>
-      <dd><%= @character.actor_id %></dd>
+      <dd>
+        <% if @character.actor.present? %>
+          <a href="/actors/<%= @character.actor_id %>">
+            <%= @character.actor.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
