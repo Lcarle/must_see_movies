@@ -1,6 +1,9 @@
 class Movie < ApplicationRecord
   # Direct associations
 
+  has_many   :characters,
+             :dependent => :destroy
+
   belongs_to :filmography,
              :class_name => "Director",
              :foreign_key => "director_id",
