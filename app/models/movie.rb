@@ -1,6 +1,11 @@
 class Movie < ApplicationRecord
   # Direct associations
 
+  belongs_to :filmography,
+             :class_name => "Director",
+             :foreign_key => "director_id",
+             :counter_cache => true
+
   # Indirect associations
 
   # Validations
